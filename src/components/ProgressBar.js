@@ -13,15 +13,15 @@ const ProgressBar = ({ value }) => {
         <div className="w-full rounded-full flex items-center h-2">
             {[...Array(filledLevels)].map((_, index) => (
                 <div
-                    className="filled-level z-20 bg-primary-orange h-2"
-                    
+                    className="filled-level z-10 bg-dark-blue h-2"
+                    style={{width: filledLevelWidth}}
                     key={index}
                 ></div>
             ))}
 
             {[...Array(emptyLevels)].map((_, index) => (
                 <div
-                    className="empty-level bg-dark-blue h-2"
+                    className="empty-level h-2"
                     style={{ width: emptyLevelWidth }}
                     key={index}
                 ></div>
