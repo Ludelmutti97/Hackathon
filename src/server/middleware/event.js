@@ -6,7 +6,6 @@ export function checkDataFromNewEvent(req, res) {
     date === "" ||
     hours === "" ||
     locationId === "" ||
-    participants === "" ||
     hostId === ""
   ) {
     return `Por favor preencha todos os campos.`;

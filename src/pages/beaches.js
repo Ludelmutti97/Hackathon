@@ -34,6 +34,7 @@ export default function Beaches() {
     }, []);
 
     const postGame = async () => {
+
         const res = await fetch("api/events/", {
             method: "POST",
             headers: {
@@ -41,12 +42,11 @@ export default function Beaches() {
             },
             body: JSON.stringify(dataToSend),
         });
-
         const data = await res.json();
-
+        
         const status = res.status;
         if (status === 201) {
-            toast.success("Evento!", {
+            toast.success("Evento criado!", {
                 position: "bottom-center",
                 autoClose: 1500,
                 hideProgressBar: true,
