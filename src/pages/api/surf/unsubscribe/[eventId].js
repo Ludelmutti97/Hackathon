@@ -9,7 +9,7 @@ export default async function handler(req, res) {
         if (req.method === "PATCH") {
             const data = req.body;
 
-            const addPlayer = await unsubscribeFromEvent(data.uid, data.gid);
+            const addPlayer = await unsubscribeFromEvent(data.uid, data.eid);
             return res.status(200).json({msg: "participant_removed"})
         }
 
