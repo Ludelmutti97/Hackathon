@@ -8,8 +8,9 @@ export default async function handler(req, res) {
         if (req.method === "PATCH") {
             const data = req.body;
 
-            const addParticipant = await newParticipant(data.uid, data.gid);
+            const addParticipant = await newParticipant(data.uid, data.eid);
             if (addParticipant) {
+             
                 return res.status(201).json({ addParticipant });
             }
         }

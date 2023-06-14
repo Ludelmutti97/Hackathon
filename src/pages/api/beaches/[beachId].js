@@ -1,12 +1,13 @@
 import { getBeachesbyId } from "@/server/services/beaches";
 
 export default async function handler(req, res) {
-    const beachId  = req.query.id;
+    const  beach  = req.query;
 
     try {
         if (req.method === "GET") {
-            const beach = await getBeachesbyId(beachId);
-            return res.status(200).json({ beach });
+            const response = await getBeachesbyId(beach.beachId);
+           
+            return res.status(200).json(response);
         }
 
         return res.status(404).json({msg: "not_found"});

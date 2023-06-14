@@ -5,7 +5,7 @@ export async function getBeaches() {
   return fields;
 }
 
-export async function getBeachesbyId() {
-  const fields = await findBeachById();
+export async function getBeachesbyId(id) {
+  const fields = await findBeachById(id);
   return fields;
 }
