@@ -1,73 +1,55 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+
 
 export default function Navbar({ page }) {
-  const [selected, setSelected] = useState("home");
+  const [selected, setSelected] = useState("profile");
+  const handleClick = () => {
+    setSelected((prevState) => page);
+  };
 
+  useEffect(() => {
+    handleClick();
+  }, [selected]);
+
+  
   return (
-    <nav className="flex justify-between">
-      <div>
-        <Link href="/">
-          <Image
-            src={"/../svg/appLogo.svg"}
-            width={80}
-            height={80}
-            alt="Company Logo"
-          />
+    <nav className="fixed bottom-0 z-50 w-full">
+      <div className="flex justify-around py-4 w-full bg-dark-blue">
+        <Link href="/beaches">
+          <div onClick={handleClick}>
+            <Image
+              src={""}
+              width={32}
+              height={32}
+              className="rotate-90"
+              alt="follow"
+            />
+          </div>
+        </Link>
+
+        <Link href="/events">
+          <div onClick={handleClick}>
+            <Image
+              src={""}
+              width={32}
+              height={32}
+              alt="follow"
+            />
+          </div>
+        </Link>
+        <Link href="/profile">
+          <div onClick={handleClick}>
+            <Image
+              src={""}
+              width={32}
+              height={32}
+              alt="follow"
+            />
+          </div>
         </Link>
       </div>
-      <ul className="flex gap-5 items-center text-lightest-white  font-robotoRegular">
-        <li>
-          <Link
-            className={`${
-              selected === "home" ? "border-b-red-700" : "border-b-transparent"
-            } transition ease-in-out W py-3 hover:border-b hover:border-b-lightest-blue hover:text-lightest-blue duration-200`}
-            href="/"
-          >
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={`${
-              selected === "empresas"
-                ? "border-b-red-700"
-                : "border-b-transparent"
-            } transition ease-in-out border-b border-b-transparent py-3 hover:border-b hover:border-b-lightest-blue hover:text-lightest-blue duration-200`}
-            href="/empresas"
-          >
-            Empresas
-          </Link>
-        </li>
-        <li>
-          <Link
-            onClick={() => setSelected("aboutus")}
-            className={`${
-              selected === "aboutus"
-                ? "border-b-red-700"
-                : "border-b-transparent"
-            } transition ease-in-out border-b border-b-transparent py-3 hover:border-b hover:border-b-lightest-blue  hover:text-lightest-blue duration-200`}
-            href="/aboutus"
-          >
-            Sobre nós
-          </Link>
-        </li>
-        <li>
-          <Link
-            onClick={() => setSelected("contacts")}
-            className={`${
-              selected === "contacts"
-                ? "border-b-red-700"
-                : "border-b-transparent"
-            } transition ease-in-out border-b border-b-transparent py-3 hover:border-b hover:border-b-lightest-blue  hover:text-lightest-blue duration-200`}
-            href="/contacts"
-          >
-            Contactos
-          </Link>
-        </li>
-      </ul>
     </nav>
   );
 }
