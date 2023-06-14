@@ -64,7 +64,7 @@ export async function getAddArray(uid, eid) {
 
 
 
-//
+
 export async function newParticipant(uid, eid) {
 
   const creation = await addNewPlayer(uid, eid);
