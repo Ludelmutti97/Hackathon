@@ -29,9 +29,9 @@ export async function findEventByToday() {
     (a, b) => Number(a.hours.slice(0, -3)) - Number(b.hours.slice(0, -3))
   );
 
-  const newOResult = orderedResult.filter((ele) => ele.participants < 10);
 
-  return newOResult;
+
+  return orderedResult;
 }
 
 export async function findEventByWeek() {
@@ -89,21 +89,22 @@ export async function createNewEvent(data) {
   return result;
 }
 
-export async function addNewPlayer(uid, gameId) {
+export async function addNewPlayer(uid, eid) {
   // CHECK IF USER IS ALREADY SIGNED IN GAME
-
+  console.log(uid, eid);
   const collection = await getMongoCollection(COLLECTION_NAME);
-  const game = await collection.findOne({ _id: new ObjectId(gameId) });
+  const event = await collection.findOne({ _id: new ObjectId(eid) });
 
-  const isAlreadyParticipating = game.playersId.some(
+  const isAlreadyParticipating = event.playersId.some(
     (playerId) => playerId.toString() === uid
   );
 
-  const isHost = game.hostId.toString() === uid;
+  const isHost = event.hostId.toString() === uid; // Não esta a ser usado !!
 
-  if (isAlreadyParticipating) {
+
+  if (!isAlreadyParticipating) {
     const result = await collection.updateOne(
-      { _id: new ObjectId(gameId) },
+      { _id: new ObjectId(eid) },
       {
         $push: { playersId: new ObjectId(uid) },
         $inc: { participants: 1 },

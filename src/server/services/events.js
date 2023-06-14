@@ -6,6 +6,7 @@ import {
   findEventById,
   createNewEvent,
   removePlayerFromEvent,
+  addNewPlayer,
 } from "../database/dbLogic/events";
 
 export async function getEventById(id) {
@@ -37,9 +38,7 @@ export async function getEventByDate(date) {
 export async function newEvent(data) {
   const newData = {
     date: new Date(data.date),
-    hours: data.hours,
     locationId: new ObjectId(data.locationId),
-    participants: data.participants,
     hostId: new ObjectId(data.hostId),
     playersId: [],
   };
@@ -48,12 +47,13 @@ export async function newEvent(data) {
   return event;
 }
 
-export async function newParticipant(uid, gameId) {
-  const gameCreation = await addNewPlayer(uid, gameId);
+export async function newParticipant(uid, eid) {
+
+  const gameCreation = await addNewPlayer(uid, eid);
   return gameCreation;
 }
 
-export async function unsubscribeFromEvent(uid, gameId) {
-  const playerRemoval = await removePlayerFromEvent(uid, gameId);
+export async function unsubscribeFromEvent(uid, eid) {
+  const playerRemoval = await removePlayerFromEvent(uid, eid);
   return playerRemoval;
 }
