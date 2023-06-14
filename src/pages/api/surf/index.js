@@ -1,5 +1,5 @@
 import { checkDataFromNewEvent } from "@/server/middleware/event";
-import { getEventByDate, newEvent } from "@/server/services/events";
+import { addArray, getAddArray, getEventByDate, newEvent } from "@/server/services/events";
 
 export default async function handler(req, res) {
   try {
@@ -27,8 +27,28 @@ export default async function handler(req, res) {
       return res.status(201).json({ dataForBeach });
     }
 
+   
+
+    if (req.method === "POST") {
+
+      const user = {
+        _id: "647dc17bdf3d14c93394afb2",
+        name: "Ludmila",
+        email: "ludmila@gmail.com",
+        password: "password",
+      }
+      const { id } = req.query;
+      const event = await getAddArray(id, user._id);
+      if (event) {
+        return res.json({ message: "Event Added" });
+      } else {
+        return res.status(404).json({ message: "Event not Added" });
+      }
+    }
   }
   catch (err) {
     console.log(err);
+
   }
 }
+

@@ -8,7 +8,9 @@ import {
   removePlayerFromEvent,
   addNewPlayer,
   findEvents,
+  createArray,
 } from "../database/dbLogic/events";
+import { addEventToUser } from "../database/dbLogic/users";
 
 export async function getEventById(id) {
   const beach = await findEventById(id);
@@ -22,7 +24,7 @@ export async function getEventById(id) {
 
 export async function getEventByDate(date) {
   if (date === "week") {
-   
+
     const beach = await findEventByWeek();
     return beach;
   }
@@ -47,6 +49,18 @@ export async function newEvent(data) {
 
   const event = await createNewEvent(newData);
   return event;
+}
+
+//Array
+
+
+export async function getAddArray(uid, eid) {
+
+  const pedido = await createArray(uid, eid);
+  //console.log(pedido);
+  const outroPedido = await addEventToUser(uid, eid)
+  return pedido;
+
 }
 
 

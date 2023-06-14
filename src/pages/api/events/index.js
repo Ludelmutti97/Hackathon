@@ -1,11 +1,15 @@
 import { checkDataFromNewEvent } from "@/server/middleware/event";
 import { getEventByDate, newEvent } from "@/server/services/events";
 
-export default async function handler(req, res) {
-    try {
-        if (req.method === "GET") {
-            console.log("hgh");
-            /*  if (date) {
+
+export async function handler(req, res) {
+  try {
+
+
+    if (req.method === "GET") {
+   
+     /*  if (date) {
+
        const beach = await getEventByDate(date); 
         return res.status(200).end()
       } */
