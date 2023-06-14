@@ -3,25 +3,25 @@ import { useEffect, useState } from "react";
 import moment from "moment/moment";
 
 export default function GameCard({
-    gameId,
+    eventId,
     numPlayer,
     schedule,
     participants,
     date,
-    signToGame,
-    fieldId,
+    signToEvent,
+    beachId,
     unsubscribe,
 }) {
-    const [fieldInfo, setFieldInfo] = useState([]);
+    const [beachInfo, setBeachInfo] = useState([]);
 
-    const findCorrectField = (id) => {
-        return fieldInfo.find((ele) => ele._id == id);
+    const findCorrectBeach = (id) => {
+        return beachInfo.find((ele) => ele._id == id);
     };
 
     const fetchData = async () => {
-        const fieldRes = await fetch("/api/campos");
-        const fieldData = await fieldRes.json();
-        setFieldInfo(await fieldData);
+        const beachRes = await fetch("/api/beaches");
+        const beachData = await beachRes.json();
+        setBeachInfo(await beachData);
     };
 
     useEffect(() => {
@@ -31,12 +31,12 @@ export default function GameCard({
     }, []);
 
     return (
-        <div className="text-white flex items-center justify-around rounded-[10px] w-[347px] h-[99px]  bg-[#020e16] mb-4">
-            {findCorrectField(fieldId) && (
+        <div className="text-dark-blue flex items-center justify-around rounded-[10px] w-[347px] h-[99px]  bg-primary-orange mb-4">
+            {findCorrectBeach(beachId) && (
                 <div className="flex flex-col justify-center h-[100px] w-[100px]">
                     <Image
                         priority
-                        src={findCorrectField(fieldId)?.img}
+                        src={findCorrectBeach(beachId)?.img}
                         width={100}
                         height={100}
                         alt="Fotografia do campo"
@@ -47,11 +47,11 @@ export default function GameCard({
 
             <div className="flex flex-col text-contrastOffWhite w-1/3 ">
                 <p className="text-sm pb-1 font-robotoBold">
-                    {findCorrectField(fieldId)?.name}
+                    {findCorrectBeach(beachId)?.name}
                 </p>
 
                 <p className="text-xs font-robotoRegular">
-                    {findCorrectField(fieldId)?.location}
+                    {findCorrectBeach(beachId)?.location}
                 </p>
                 <div className="flex gap-2 text-xs">
                     <span className="font-robotoRegular">
@@ -67,24 +67,21 @@ export default function GameCard({
                         (el) => el !== "6479ec3f1de2044d9892asaba"
                     ) ? (
                         <div
-                            className={`flex flex-col w-[60px]  ${
-                                numPlayer < 8
-                                    ? "bg-primaryBlue"
-                                    : "bg-secondaryYellow text-primaryDarkestBlue"
+                            className={`flex flex-col w-[60px] bg-contrast-green text-primaryDarkestBlue"
                             } w-14 rounded justify-center text-sm`}
                             onClick={() =>
-                                signToGame("6479ec3f1de2044d9892aaba", gameId)
+                                signToEvent("6479ec3f1de2044d9892aaba", eventId)
                             }
                         >
                             <span className="text-center text-xs p-1 font-robotoRegular">
-                                {numPlayer}/10 +
+                                Juntar-se
                             </span>
                         </div>
                     ) : (
                         <div
                             className={`flex flex-col w-[60px] bg-secondaryRed rounded justify-center text-sm`}
                             onClick={() =>
-                                unsubscribe("6479ec3f1de2044d9892aaba", gameId)
+                                unsubscribe("6479ec3f1de2044d9892aaba", eventId)
                             }
                         >
                             <span className="text-center text-xs p-1 font-robotoRegular">
