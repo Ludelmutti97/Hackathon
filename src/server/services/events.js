@@ -22,15 +22,16 @@ export async function getEventById(id) {
 
 export async function getEventByDate(date) {
   if (date === "week") {
+   
     const beach = await findEventByWeek();
     return beach;
   }
   if (date === "month") {
-    const beach = await findEventByMonth();
+    const beach = await findEventByMonth(date);
     return beach;
   }
   if (date === "day") {
-    const beach = await findEventByToday();
+    const beach = await findEventByToday(date);
 
     return beach;
   }
