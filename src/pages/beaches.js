@@ -106,3 +106,8 @@ export default function Beaches() {
         </div>
     );
 }
+
+
+
+const placeholder = <span><img src=""></img>LOGIN</span>
+
