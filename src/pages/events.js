@@ -11,14 +11,14 @@ const buttons = [
 ];
 
 export default function Events(props) {
-    const [gamesScheduled, setGamesScheduled] = useState([]);
+    const [eventsScheduled, setEventsScheduled] = useState([]);
     const [selected, setSelected] = useState("day");
     const [signed, setSigned] = useState(false);
 
     const fetchData = async () => {
-        const res = await fetch(`/api/jogos/?date=${selected}`);
+        const res = await fetch(`/api/surf/?date=${selected}`);
         const data = await res.json();
-        setGamesScheduled(await data);
+        setEventsScheduled(await data);
     };
 
     useEffect(() => {
@@ -27,19 +27,19 @@ export default function Events(props) {
         })();
     }, [selected]);
 
-    const signToGame = async (uid, gid) => {
-        const res = await fetch(`/api/jogos/${gid}`, {
+    const signToEvent = async (uid, eid) => {
+        const res = await fetch(`/api/surf/${eid}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ uid, gid }),
+            body: JSON.stringify({ uid, eid }),
         });
 
         const data = await res.json();
         console.log(res.status);
         if (res.status === 201) {
-            toast.success("Boa! Inscreveste-te no jogo!", {
+            toast.success("Prepara a prancha!", {
                 position: "bottom-center",
                 autoClose: 1500,
                 hideProgressBar: true,
@@ -66,13 +66,13 @@ export default function Events(props) {
         fetchData(selected);
     };
 
-    const unsubscribePlayer = async (uid, gid) => {
-        const res = await fetch(`/api/jogos/unsubscribe/${gid}`, {
+    const unsubscribePlayer = async (uid, eid) => {
+        const res = await fetch(`/api/surf/unsubscribe/${eid}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ uid, gid }),
+            body: JSON.stringify({ uid, eid }),
         });
 
         const data = await res.json();
@@ -114,22 +114,22 @@ export default function Events(props) {
 
             <div className="flex flex-col ">
                 <div className="flex flex-col items-center mb-24">
-                    {gamesScheduled &&
-                        gamesScheduled?.map((ele) => (
+                    {eventsScheduled &&
+                        eventsScheduled?.map((ele) => (
                             <div>
                                 <EventCard
                                     key={ele._id}
-                                    gameId={ele._id}
-                                    fieldId={ele.locationId}
+                                    eventId={ele._id}
+                                    beachId={ele.locationId}
                                     numPlayer={ele.participants}
                                     participants={ele.playersId}
                                     schedule={ele.hours}
                                     date={ele.date}
-                                    signToGame={(uid, gid) =>
-                                        signToGame(uid, gid)
+                                    signToEvent={(uid, gid) =>
+                                        signToEvent(uid, gid)
                                     }
-                                    unsubscribe={(uid, gid) =>
-                                        unsubscribePlayer(uid, gid)
+                                    unsubscribe={(uid, eid) =>
+                                        unsubscribePlayer(uid, eid)
                                     }
                                 />
                             </div>
