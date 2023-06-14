@@ -6,7 +6,7 @@ import DetailedCard from "./DetailedCard";
 
 export default function Card({
     image,
-    price,
+    dificulty,
     name,
     location,
     workingHours,
@@ -43,10 +43,10 @@ export default function Card({
                     />
 
                     <div
-                        className={`absolute w-[70px] h-[20px] bg-primaryBlue bottom-4 left-3 rounded-md`}
+                        className={`absolute w-[70px] h-[20px] bg-blue-400 bottom-4 left-3 rounded-md`}
                     >
                         <p className="text-center text-sm text-contrastOffWhite font-robotoRegular">
-                            {price} €
+                            {dificulty}
                         </p>
                     </div>
                 </div>
