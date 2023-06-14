@@ -10,7 +10,7 @@ export default async function handler(req, res) {
             const beaches = await getBeaches();
             
             console.log(beaches)
-            return res.status(200).json({beaches}) ;  
+            return res.status(200).json(beaches) ;  
         }
     } catch (err) {
         console.log(err);
