@@ -38,6 +38,12 @@ export async function getEventByDate(date) {
     return beach;
   }
 }
+// All Event
+export async function getAllEvent() {
+  const beach = await findEvents();
+  return beach;
+}
+
 
 export async function newEvent(data) {
   const newData = {
@@ -56,8 +62,8 @@ export async function newEvent(data) {
 
 export async function getAddArray(uid, eid) {
 
-
-  const outroPedido = await addEventToUser(uid, eid)
+  const pedido = await addEventToUser(uid, eid)
+  
   return pedido;
 
 }
