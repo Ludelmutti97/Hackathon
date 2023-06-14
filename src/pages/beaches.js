@@ -1,5 +1,6 @@
 import Card from "@/components/beachCards/Card";
 import React, { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Beaches() {
     const [confirmation, setConfirmation] = useState(false);
@@ -20,7 +21,6 @@ export default function Beaches() {
     const fetchData = async () => {
         const res = await fetch("api/beaches/");
         const data = await res.json();
-        console.log(data)
         return data;
     };
 
@@ -34,7 +34,7 @@ export default function Beaches() {
     }, []);
 
     const postGame = async () => {
-        const res = await fetch("/api/games/", {
+        const res = await fetch("api/events/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -91,6 +91,23 @@ export default function Beaches() {
                     </li>
                 ))}
             </ul>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+            />
         </div>
     );
 }
+
+
+
+const placeholder = <span><img src=""></img>LOGIN</span>
+

@@ -22,6 +22,7 @@ export async function handler(req, res) {
         const dataForBeach = await newEvent(data);
         return res.status(201).json({ dataForBeach });
       }
+
     }
   } catch (err) {
     console.log(err);

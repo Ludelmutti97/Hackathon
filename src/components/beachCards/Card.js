@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { use, useEffect, useState } from "react";
 import DetailedCard from "./DetailedCard";
 
-
 export default function Card({
     image,
     dificulty,
@@ -93,7 +92,7 @@ export default function Card({
                                 handleInfo(field, value)
                             }
                             description={description}
-                            // postGame={postGame}
+                            postGame={postGame}
                         />
                     </motion.div>
                 )}
