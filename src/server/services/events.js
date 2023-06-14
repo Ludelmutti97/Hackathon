@@ -51,7 +51,7 @@ export async function newEvent(data) {
 
 
 
-//
+
 export async function newParticipant(uid, eid) {
 
   const creation = await addNewPlayer(uid, eid);

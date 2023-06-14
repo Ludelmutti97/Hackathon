@@ -1,7 +1,6 @@
 import { getBeaches } from "@/server/services/beaches";
 
 
-// Todas as praias
 export default async function handler(req, res) {
 
     try {

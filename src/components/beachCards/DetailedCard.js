@@ -5,8 +5,6 @@ export default function DetailedCard({
     description,
     postGame,
     handleInfo,
-    lat,
-    long,
 }) {
     const handleDateAndHours = (date) => {
         handleInfo("date", new Date(date?.$d).valueOf());
