@@ -34,9 +34,9 @@ export default async function handler(req, res) {
     if (req.method === "POST") {
       const data = req.body;
 
-      if (checkDataFromNewEvent(req, res)) {
-        return res.status(401).json({msg: checkDataFromNewEvent(req, res)})
-      }
+      // if (true) {
+      //   return res.status(401).json({msg: checkDataFromNewEvent(req, res)})
+      // }
 
       const dataForBeach = await newEvent(data);
       return res.status(201).json({ dataForBeach });
