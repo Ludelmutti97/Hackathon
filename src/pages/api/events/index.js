@@ -6,7 +6,7 @@ export async function handler(req, res) {
 
 
     if (req.method === "GET") {
-      console.log("hgh");
+   
      /*  if (date) {
        const beach = await getEventByDate(date); 
         return res.status(200).end()

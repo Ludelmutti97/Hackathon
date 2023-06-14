@@ -77,9 +77,16 @@ export async function createNewEvent(data) {
   return result;
 }
 
+// ADD ao Array
+
+export async function createArray(uid, eid) {
+
+}
+
+
 export async function addNewPlayer(uid, eid) {
   // CHECK IF USER IS ALREADY SIGNED IN GAME
-  console.log(uid, eid);
+
   const collection = await getMongoCollection(COLLECTION_NAME);
   const event = await collection.findOne({ _id: new ObjectId(eid) });
 
@@ -87,7 +94,7 @@ export async function addNewPlayer(uid, eid) {
     (playerId) => playerId.toString() === uid
   );
 
-  
+
 
 
   if (!isAlreadyParticipating) {
@@ -106,7 +113,7 @@ export async function addNewPlayer(uid, eid) {
 
 //Desmarcar evento
 export async function removePlayerFromEvent(uid, eid) {
-  
+
 
   const collection = await getMongoCollection(COLLECTION_NAME);
   const event = await collection.findOne({ _id: new ObjectId(eid) });
