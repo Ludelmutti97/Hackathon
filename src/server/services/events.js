@@ -7,6 +7,7 @@ import {
   createNewEvent,
   removePlayerFromEvent,
   addNewPlayer,
+  findEvents,
 } from "../database/dbLogic/events";
 
 export async function getEventById(id) {
@@ -47,13 +48,25 @@ export async function newEvent(data) {
   return event;
 }
 
+
+
+//
 export async function newParticipant(uid, eid) {
 
-  const gameCreation = await addNewPlayer(uid, eid);
-  return gameCreation;
+  const creation = await addNewPlayer(uid, eid);
+  return creation;
 }
 
+//  
 export async function unsubscribeFromEvent(uid, eid) {
   const playerRemoval = await removePlayerFromEvent(uid, eid);
   return playerRemoval;
 }
+
+
+// Todos os eventos
+export async function getEvents() {
+  const event = await findEvents();
+  return event;
+}
+

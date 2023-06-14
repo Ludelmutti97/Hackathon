@@ -30,7 +30,6 @@ export async function findEventByToday() {
   );
 
 
-
   return orderedResult;
 }
 
@@ -68,18 +67,7 @@ export async function findEventByMonth() {
   return result;
 }
 
-// ************  FIND ITEMS BY LOCATION ************
 
-/* export async function findGamesByLocation(location) {
-  const collection = await getMongoCollection(COLLECTION_NAME);
-  const result = await collection
-    .find({
-      idLocation: new ObjectId("6479c2a71de2044d9892aa9f"),
-    })
-    .toArray();
-  return result;
-}
- */
 
 // ********* --- INSERT EVENT --- *********
 
@@ -140,4 +128,12 @@ export async function removePlayerFromEvent(uid, gameId) {
     return true;
   }
   return false;
+}
+
+// All events
+export async function findEvents() {
+  const collection = await getMongoCollection(COLLECTION_NAME);
+  const result = await collection.find().toArray();
+
+  return result;
 }
