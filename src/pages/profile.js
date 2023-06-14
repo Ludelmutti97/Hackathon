@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 export default function Profile(props) {
     const userId = "6479ec3f1de2044d9892aaba";
     const [userInfo, setUserInfo] = useState();
-
     const router = useRouter();
 
     const fetchData = async (uid) => {
