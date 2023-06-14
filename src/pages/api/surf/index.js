@@ -1,5 +1,5 @@
 import { checkDataFromNewEvent } from "@/server/middleware/event";
-import { addArray, getAddArray, getAllEvent, getEventByDate, newEvent } from "@/server/services/events";
+import { addArray, getAddArray, getAllEvent, getAllEvents, getEventByDate, newEvent } from "@/server/services/events";
 
 export default async function handler(req, res) {
   try {
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
         return res.status(200).json(beach)
       }
 
-      const event= await getAllEvent()
+      const event= await getAllEvents()
       return res.status(200).json(event)
     }
 

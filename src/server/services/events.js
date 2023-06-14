@@ -38,11 +38,7 @@ export async function getEventByDate(date) {
     return beach;
   }
 }
-// All Event
-export async function getAllEvent() {
-  const beach = await findEvents();
-  return beach;
-}
+
 
 
 export async function newEvent(data) {
@@ -86,7 +82,7 @@ export async function unsubscribeFromEvent(uid, eid) {
 
 
 // Todos os eventos
-export async function getEvents() {
+export async function getAllEvents() {
   const event = await findEvents();
   return event;
 }
