@@ -23,3 +23,21 @@ export async function addEventToUser(uid, eid) {
         return array;
     }
 }
+
+
+export async function removeEventFromPlayer(uid, eid) {
+    const collection = await getMongoCollection(COLLECTION_NAME);
+    const event = await collection.findOne({ _id: new ObjectId(uid) });
+
+
+
+    if (event) {
+        const array = await collection.updateOne(
+            { _id: new ObjectId(uid) },
+            { $pull: { myEvents: new ObjectId(eid) } }
+        );
+        return array;
+    }
+}
+
+

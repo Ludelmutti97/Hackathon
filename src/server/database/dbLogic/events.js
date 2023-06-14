@@ -79,9 +79,6 @@ export async function createNewEvent(data) {
 
 // ADD ao Array
 
-export async function createArray(uid, eid) {
-
-}
 
 
 export async function addNewPlayer(uid, eid) {
@@ -112,6 +109,7 @@ export async function addNewPlayer(uid, eid) {
 }
 
 //Desmarcar evento
+
 export async function removePlayerFromEvent(uid, eid) {
 
 
