@@ -87,7 +87,7 @@ export async function addNewPlayer(uid, eid) {
     (playerId) => playerId.toString() === uid
   );
 
-  const isHost = event.hostId.toString() === uid; // Não esta a ser usado !!
+  
 
 
   if (!isAlreadyParticipating) {
@@ -104,21 +104,21 @@ export async function addNewPlayer(uid, eid) {
   return false;
 }
 
-export async function removePlayerFromEvent(uid, gameId) {
-  // CHECK IF USER IS ALREADY SIGNED IN GAME
+//Desmarcar evento
+export async function removePlayerFromEvent(uid, eid) {
+  
 
   const collection = await getMongoCollection(COLLECTION_NAME);
-  const game = await collection.findOne({ _id: new ObjectId(gameId) });
+  const event = await collection.findOne({ _id: new ObjectId(eid) });
 
-  const isAlreadyParticipating = game.playersId.some(
+  const isAlreadyParticipating = event.playersId.some(
     (playerId) => playerId.toString() === uid
   );
 
-  const isHost = game.hostId.toString() === uid;
 
   if (isAlreadyParticipating) {
     const result = await collection.updateOne(
-      { _id: new ObjectId(gameId) },
+      { _id: new ObjectId(eid) },
       {
         $pull: { playersId: new ObjectId(uid) },
         $inc: { participants: -1 },
