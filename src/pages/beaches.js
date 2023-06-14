@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Card from "@/components/beachCards/Card";
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -35,7 +36,7 @@ export default function Beaches() {
 
     const postGame = async () => {
 
-        const res = await fetch("api/events/", {
+        const res = await fetch("api/surf/", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -43,7 +44,7 @@ export default function Beaches() {
             body: JSON.stringify(dataToSend),
         });
         const data = await res.json();
-        
+        console.log(data)
         const status = res.status;
         if (status === 201) {
             toast.success("Evento criado!", {
@@ -103,6 +104,7 @@ export default function Beaches() {
                 pauseOnHover
                 theme="dark"
             />
+            <Navbar page={"page"}/>
         </div>
     );
 }

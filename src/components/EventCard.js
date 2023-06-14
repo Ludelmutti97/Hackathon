@@ -60,56 +60,53 @@ export default function GameCard({
                     <span className="font-robotoRegular ">{schedule}</span>
                 </div>
             </div>
-
-            <div>
-                <div className="flex flex-col w-[60px] gap-2">
-                    {!participants?.some(
-                        (el) => el !== "6479ec3f1de2044d9892asaba"
-                    ) ? (
-                        <div
-                            className={`flex flex-col w-[60px] bg-contrast-green text-primaryDarkestBlue"
-                            } w-14 rounded justify-center text-sm`}
-                            onClick={() =>
-                                signToEvent("6479ec3f1de2044d9892aaba", eventId)
-                            }
-                        >
-                            <span className="text-center text-xs p-1 font-robotoRegular">
-                                Juntar-se
-                            </span>
-                        </div>
-                    ) : (
-                        <div
-                            className={`flex flex-col w-[60px] bg-secondaryRed rounded justify-center text-sm`}
-                            onClick={() =>
-                                unsubscribe("6479ec3f1de2044d9892aaba", eventId)
-                            }
-                        >
-                            <span className="text-center text-xs p-1 font-robotoRegular">
-                                Sair
-                            </span>
-                        </div>
-                    )}
-                    <div>
-                        {participants?.some(
+            {unsubscribe && (
+                <div>
+                    <div className="flex flex-col w-[60px] gap-2">
+                        {!participants?.some(
                             (el) => el !== "6479ec3f1de2044d9892asaba"
-                        ) && (
-                            <div className="bg-green-500  w-[60px] font-riftItalic text-center text-xs ">
-                                <span>Inscrito</span>
+                        ) ? (
+                            <div
+                                className={`flex flex-col w-[60px] bg-contrast-green text-primaryDarkestBlue"
+                            } w-14 rounded justify-center text-sm`}
+                                onClick={() =>
+                                    signToEvent(
+                                        "6479ec3f1de2044d9892aaba",
+                                        eventId
+                                    )
+                                }
+                            >
+                                <span className="text-center text-xs p-1 font-robotoRegular">
+                                    Juntar-se
+                                </span>
+                            </div>
+                        ) : (
+                            <div
+                                className={`flex flex-col w-[60px] bg-secondaryRed rounded justify-center text-sm`}
+                                onClick={() =>
+                                    unsubscribe(
+                                        "6479ec3f1de2044d9892aaba",
+                                        eventId
+                                    )
+                                }
+                            >
+                                <span className="text-center text-xs p-1 font-robotoRegular">
+                                    Sair
+                                </span>
                             </div>
                         )}
+                        <div>
+                            {participants?.some(
+                                (el) => el !== "6479ec3f1de2044d9892asaba"
+                            ) && (
+                                <div className="bg-green-500  w-[60px] font-riftItalic text-center text-xs ">
+                                    <span>Inscrito</span>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
-}
-
-{
-    /* <div className="flex flex-col mr-3 space-y-1  ">
-<button className=" bg-primaryBlue text-contrastOffWhite rounded-lg w-[80px] h-[28px] p">
-0/10 +
-{/** NUMERO DE JOGADORES INSCRITOS. MUDAR A COR CONSOANTE N DE INSCRITOS
-</button>
-
-</div> */
 }
