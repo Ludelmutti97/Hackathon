@@ -15,6 +15,32 @@ export default function Profile(props) {
 
     const router = useRouter();
 
+    const unsubscribePlayer = async (uid, eid) => {
+        const res = await fetch(`/api/surf/unsubscribe/${eid}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ uid, eid }),
+        });
+
+        const data = await res.json();
+        console.log(res.status);
+        if (res.status === 200) {
+            toast.error("Inscrição cancelada :(", {
+                position: "bottom-center",
+                autoClose: 1500,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
+        }
+        fetchData(selected);
+    };
+
     const fetchData = async (uid) => {
         const resUser = await fetch(`api/users/${uid}`);
         const dataUser = await resUser.json();

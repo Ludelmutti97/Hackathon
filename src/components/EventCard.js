@@ -76,7 +76,7 @@ export default function GameCard({
                                     )
                                 }
                             >
-                                <span className="text-center rounded text-branco bg-navBar text-xs p-1 font-robotoRegular">
+                                <span className="text-center rounded text-branco bg-navBar text-xs2 font-robotoRegular">
                                     Juntar-se
                                 </span>
                             </div>

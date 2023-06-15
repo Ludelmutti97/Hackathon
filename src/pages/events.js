@@ -77,8 +77,8 @@ export default function Events(props) {
 
         const data = await res.json();
         console.log(res.status);
-        if (res.status === 201) {
-            toast.success(":(", {
+        if (res.status === 200) {
+            toast.error("Inscrição cancelada :(", {
                 position: "bottom-center",
                 autoClose: 1500,
                 hideProgressBar: true,
