@@ -9,7 +9,7 @@ export default function Login(props) {
         <div className="bg-login-bg w-screen  bg-cover bg-no-repeat bg-center h-screen">
             <div className="h-screen w-full flex flex-col items-center justify-center gap-4 ">
                 <div className="text-contrastOffWhite mt-15 p-10">
-                    <Image justify-center width={150} height={150} src={logo} />
+                    <Image justify-center width={250} height={250} src={logo} />
                 </div>
                 <section className="text-center">
                     <div className="m-14">
