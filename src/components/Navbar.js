@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import waves from "#/svg/waves.svg"
+import board from "#/svg/board.svg"
+import user from "#/svg/user.svg";
 
 
 export default function Navbar({ page }) {
@@ -16,14 +19,13 @@ export default function Navbar({ page }) {
   
   return (
     <nav className="fixed bottom-0 z-50 w-full">
-      <div className="flex justify-around py-4 w-full bg-dark-blue">
+      <div className="flex justify-around py-4 w-full bg-dark-blue items-center">
         <Link href="/beaches">
           <div onClick={handleClick}>
             <Image
-              src={""}
+              src={waves}
               width={32}
               height={32}
-              className="rotate-90"
               alt="follow"
             />
           </div>
@@ -32,7 +34,7 @@ export default function Navbar({ page }) {
         <Link href="/events">
           <div onClick={handleClick}>
             <Image
-              src={""}
+              src={board}
               width={32}
               height={32}
               alt="follow"
@@ -42,7 +44,7 @@ export default function Navbar({ page }) {
         <Link href="/profile">
           <div onClick={handleClick}>
             <Image
-              src={""}
+              src={user}
               width={32}
               height={32}
               alt="follow"

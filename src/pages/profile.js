@@ -45,7 +45,7 @@ export default function Profile(props) {
                     <Image
                         width={150}
                         height={132}
-                        src={""}
+                        src={userInfo?.img}
                         className="rounded-full"
                     />
                 </div>
