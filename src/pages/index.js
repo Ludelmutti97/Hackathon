@@ -16,6 +16,8 @@ export default function Login(props) {
                         <LoginForm />
                     </div>
 
+
+
                     <div className="flex flex-col items-center gap-8">
                         <Link href={`/profile`}>
                             <Button
@@ -32,4 +34,5 @@ export default function Login(props) {
             </div>
         </div>
     );
+
 }
