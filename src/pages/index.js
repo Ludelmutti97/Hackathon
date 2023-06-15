@@ -22,12 +22,12 @@ export default function Login(props) {
                         <Link href={`/profile`}>
                             <Button
                                 color={"#FAAB78"}
-                                text={"Log In"}
+                                text={"Entrar"}
                                 border={true}
                             />
                         </Link>
                         <Link href={`/`}>
-                            <Button text={"Sign Up"} color={""} />
+                            <Button text={"Fala connosco"} color={""} />
                         </Link>
                     </div>
                 </section>
