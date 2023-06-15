@@ -57,6 +57,8 @@ export default function Profile(props) {
     setMyEvents(eventInfo);
   };
 
+
+=======
   useEffect(() => {
     fetchData(userId);
   }, []);
@@ -94,7 +96,7 @@ export default function Profile(props) {
 
         <div className="pt-10">
           <h3>Próximos eventos</h3>
-          {myEvents &&
+          {myEvents ? 
             myEvents.map((ele) => (
               <EventCard
                 key={ele._id}
@@ -105,7 +107,7 @@ export default function Profile(props) {
                 participants={["6479ec3f1de2044d9892aaba"]}
                 unsubscribe={(uid) => unsubscribePlayer(uid, ele._id)}
               />
-            ))}
+            )) : : <p>Não estás inscrito em nenhum evento!</p> }
         </div>
       </div>
 
