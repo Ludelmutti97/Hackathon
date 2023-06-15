@@ -1,31 +1,40 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    ],
-    theme: {
-        extend: {
-            colors: {
-                "primary-orange": "#FAAB78",
-                "dark-blue": "#2D5473",
-                "our-white": "#F4f4f9",
-                "lightest-blue": "#89B8BE",
-                "primary-blue": "#386ae8",
-                "contrast-green": "#31e184",
-                "contrast-red": "#ef1255",
-            },
-            backgroundImage: {
-                "login-bg": "url('/images/img.png')",
-            },
-            fontFamily: {
-                robotoThin: ["Roboto-Thin"],
-                robotoThinItalic: ["Roboto-ThinItalic"],
-                robotoRegular: ["Roboto-Regular"],
-                robotoBold: ["Roboto-Bold"],
-            },
-        },
+
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        "backgroundColor": "#E7C3AC",
+        "secondBackgroundColor": "#E8F3D6",
+        "branco": "#F4F4F9",
+        "logginButton": "#FAAB78",
+        "titulo": "#FAAB78",
+        "verde": "#489750",
+        "amarelo": "#FFDD55",
+        "vermelho": "#D03030",
+        "navBar": "#D56A43",
+        "icons": "#F6AB3F",
+        "boxes": "#E8F3D6",
+        "laranjaSelect": "#E8B873",
+        "laranjaBarra": "#E3CDB1"
+
+
+
+
+      },
+      fontFamily: {
+        "robotoThin": ["Roboto-Thin"],
+        "robotoThinItalic": ["Roboto-ThinItalic"],
+        "robotoRegular": ["Roboto-Regular"],
+        "robotoBold": ["Roboto-Bold"]
+
+      }
+
     },
     plugins: [],
 };
