@@ -2,6 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { use, useEffect, useState } from "react";
 import DetailedCard from "./DetailedCard";
+import Location from "../Location";
 
 export default function Card({
     image,
@@ -14,11 +15,11 @@ export default function Card({
     handleInfo,
 }) {
     const tagColor = {
-        Fácil : "verde",
-        Médio : "amarelo",
-        Difícil : "vermelho"
-    }
-    console.log(tagColor[dificulty])
+        Fácil: "verde",
+        Médio: "amarelo",
+        Difícil: "vermelho",
+    };
+    console.log(tagColor[dificulty]);
     const [open, setOpen] = useState(false);
     const hostId = "6479ec3f1de2044d9892aaba";
 
@@ -32,21 +33,19 @@ export default function Card({
                 animate={{
                     height: open ? "fit-content" : "fit-content",
                 }}
-                className="w-[368px] bg-card-color rounded-lg border-solid border border-opacity-10 flex flex-col items-center px-[10px] mt-4"
+                className="w-[175px] p-1 bg-card-color border-solid border border-opacity-10 flex flex-col rounded-lg items-center  my-4"
             >
-                <div className="relative w-full mt-3 rounded-lg h-[200px]">
+                <div className="relative w-full h-[125px]">
                     <Image
                         onClick={() => setOpen((prevState) => !prevState)}
-                        priority
                         src={image}
-                        width={364}
-                        height={210}
-                        alt="Fotografia do Ringue da Matriz"
-                        className="rounded-lg block"
+                        width={300}
+                        height={0}
+                        alt="Fotografia praias"
                     />
 
                     <div
-                        className={`absolute w-[70px] h-[20px] bg-${tagColor[dificulty]} bottom-4 left-3 rounded-md`}
+                        className={`absolute w-[70px] h-[20px] bg-${tagColor[dificulty]} bottom-0 left-3 rounded-md`}
                     >
                         <p className="text-center text-sm text-branco font-robotoRegular">
                             {dificulty}
@@ -55,16 +54,16 @@ export default function Card({
                 </div>
 
                 <div className="flex w-full p-3 justify-between z-10">
-                    <div className="w-2/3">
+                    <div className="">
                         <h2 className="text-navBar  text-m font-robotoBold">
                             {name}
                         </h2>
 
-                        <span className="text-navBar font-robotoRegular text-sm block ">
+                        <span className="flex items-center text-navBar font-robotoRegular text-sm">
+                            <Location />
                             {location}
                         </span>
                     </div>
-
                 </div>
 
                 {open && (

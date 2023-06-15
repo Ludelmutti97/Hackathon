@@ -93,8 +93,8 @@ export default function Beaches() {
     };
 
     return (
-        <div className="flex flex-col items-center">
-            <ul className="mb-24 z-30">
+        <div className="flex flex-col items-center  ">
+            <ul className="mb-24 z-30 flex flex-wrap gap-2 justify-center">
                 {beachesAvailable?.map((ele) => (
                     <li key={ele._id}>
                         <Card

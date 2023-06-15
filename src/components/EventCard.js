@@ -11,19 +11,22 @@ export default function GameCard({
     signToEvent,
     beachId,
     unsubscribe,
+
 }) {
     const [beachInfo, setBeachInfo] = useState([]);
 
     const findCorrectBeach = (id) => {
         return beachInfo.find((ele) => ele._id == id);
     };
-
-    const fetchData = async () => {
-        const beachRes = await fetch("/api/beaches");
-        const beachData = await beachRes.json();
-        setBeachInfo(await beachData);
-    };
-
+    
+    
+        const fetchData = async () => {
+            const beachRes = await fetch("/api/beaches");
+            const beachData = await beachRes.json();
+            setBeachInfo(await beachData);
+        };
+    
+        
     useEffect(() => {
         (async () => {
             await fetchData();
