@@ -6,9 +6,9 @@ import logo from "/@/../public/images/Logo.png";
 import Image from "next/image";
 export default function Login(props) {
     return (
-        <div className="bg-login-bg w-screen  bg-cover bg-no-repeat bg-center h-screen -z-20">
-            <div className="h-screen w-full flex flex-col items-center bg-gradient-to-b from-[#211a1db7] to-[#00000014] -z-10">
-                <div className="text-contrastOffWhite mt-16 p-10">
+        <div className="bg-login-bg w-screen  bg-cover bg-no-repeat bg-center h-screen">
+            <div className="h-screen w-full flex flex-col items-center ">
+                <div className="text-contrastOffWhite mt-24 p-10">
                     <Image justify-center width={150} height={150} src={logo} />
                 </div>
                 <section className="text-center mt-6">
