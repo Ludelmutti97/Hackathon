@@ -3,12 +3,15 @@ import { ObjectId } from "mongodb";
 
 const COLLECTION_NAME = "users";
 
+//
+
 export async function findUser(uid) {
     const collection = await getMongoCollection(COLLECTION_NAME);
     const result = await collection.findOne({ _id: new ObjectId(uid) });
     return result;
 }
 
+//
 export async function addEventToUser(uid, eid) {
     const collection = await getMongoCollection(COLLECTION_NAME);
     const userOutfit = await collection.findOne({ _id: new ObjectId(uid) });
@@ -24,6 +27,7 @@ export async function addEventToUser(uid, eid) {
     }
 }
 
+//
 
 export async function removeEventFromPlayer(uid, eid) {
     const collection = await getMongoCollection(COLLECTION_NAME);

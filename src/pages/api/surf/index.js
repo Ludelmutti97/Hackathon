@@ -34,12 +34,7 @@ export default async function handler(req, res) {
 
     if (req.method === "POST") {
 
-      const user = {
-        _id: "647dc17bdf3d14c93394afb2",
-        name: "Ludmila",
-        email: "ludmila@gmail.com",
-        password: "password",
-      }
+      
       const { id } = req.query;
       const event = await getAddArray(id, user._id);
       if (event) {

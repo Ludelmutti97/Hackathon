@@ -33,6 +33,7 @@ export async function findEventByToday() {
   return orderedResult;
 }
 
+//   ************ BY WEEK************
 export async function findEventByWeek() {
   const collection = await getMongoCollection(COLLECTION_NAME);
   const currentDate = moment().startOf("week");
@@ -50,6 +51,7 @@ export async function findEventByWeek() {
   return result;
 }
 
+//   ************ BY MONTH ************
 export async function findEventByMonth() {
   const collection = await getMongoCollection(COLLECTION_NAME);
   const currentDate = moment().startOf("month");
@@ -77,12 +79,10 @@ export async function createNewEvent(data) {
   return result;
 }
 
-// ADD ao Array
-
-
+// ADD  Array
 
 export async function addNewPlayer(uid, eid) {
-  // CHECK IF USER IS ALREADY SIGNED IN GAME
+  
 
   const collection = await getMongoCollection(COLLECTION_NAME);
   const event = await collection.findOne({ _id: new ObjectId(eid) });
@@ -90,8 +90,6 @@ export async function addNewPlayer(uid, eid) {
   const isAlreadyParticipating = event.playersId.some(
     (playerId) => playerId.toString() === uid
   );
-
-
 
 
   if (!isAlreadyParticipating) {
@@ -108,7 +106,7 @@ export async function addNewPlayer(uid, eid) {
   return false;
 }
 
-//Desmarcar evento
+//Desmarcar EVENT
 
 export async function removePlayerFromEvent(uid, eid) {
 
@@ -135,7 +133,7 @@ export async function removePlayerFromEvent(uid, eid) {
   return false;
 }
 
-// All events
+// All EVENTS
 export async function findEvents() {
   const collection = await getMongoCollection(COLLECTION_NAME);
   const result = await collection.find().toArray();

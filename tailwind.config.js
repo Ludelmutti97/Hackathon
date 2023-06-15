@@ -8,21 +8,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "primary-orange" : "#F6AB3F",
-        "dark-blue" : "#2D5473",
-        "white" : "#FAF1E5",
-        "lightest-blue" : "#89B8BE",
-        "primary-blue" : "#386ae8",
-        "contrast-green" : "#31e184",
-        "contrast-red" : "#ef1255",
-  
+        "backgroundColor": "#E7C3AC",
+        "secondBackgroundColor": "#E8F3D6",
+        "branco": "#F4F4F9",
+        "logginButton": "#FAAB78",
+        "titulo": "#FAAB78",
+        "verde": "#489750",
+        "amarelo": "#FFDD55",
+        "vermelho": "#D03030",
+        "navBar": "#D56A43",
+        "icons": "#F6AB3F",
+        "boxes": "#E8F3D6",
+        "laranjaSelect": "#E8B873",
+        "laranjaBarra": "#E3CDB1"
+
+
+
+
       },
-      fontFamily : {
-        "robotoThin":["Roboto-Thin"],
-        "robotoThinItalic":["Roboto-ThinItalic"],
-        "robotoRegular":["Roboto-Regular"],
-        "robotoBold":["Roboto-Bold"]
-        
+      fontFamily: {
+        "robotoThin": ["Roboto-Thin"],
+        "robotoThinItalic": ["Roboto-ThinItalic"],
+        "robotoRegular": ["Roboto-Regular"],
+        "robotoBold": ["Roboto-Bold"]
+
       }
     },
   },
