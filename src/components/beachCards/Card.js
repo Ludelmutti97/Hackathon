@@ -2,18 +2,22 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { use, useEffect, useState } from "react";
 import DetailedCard from "./DetailedCard";
+
 import Location from "../Location";
 
+
 export default function Card({
-    image,
-    dificulty,
-    name,
-    location,
-    cardId,
-    description,
-    postGame,
-    handleInfo,
+  image,
+  dificulty,
+  name,
+  location,
+  cardId,
+  description,
+  postGame,
+  handleInfo,
 }) {
+
+
     const tagColor = {
         Fácil: "verde",
         Médio: "amarelo",
@@ -23,9 +27,12 @@ export default function Card({
     const [open, setOpen] = useState(false);
     const hostId = "6479ec3f1de2044d9892aaba";
 
-    useEffect(() => {
-        handleInfo("hostId", hostId);
-    }, []);
+
+  useEffect(() => {
+    handleInfo("hostId", hostId);
+  }, []);
+
+
 
     return (
         <>
@@ -90,4 +97,5 @@ export default function Card({
             </motion.div>
         </>
     );
+
 }
