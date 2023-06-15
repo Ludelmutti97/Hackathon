@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "6479ec3f1de2044d9892aaba"
+  },
+  "name": "Teresa Correia",
+  "email": "qualquercoisa@gqqrcoisa.qqrcoisa",
+  "password": "1234",
+  "age": 24,
+  "nationality": "🇵🇹",
+  "img": "/../public/images/teresa.png",
+  "progress": 0,
+  "levels": 0,
+  "myEvents": [
+    {
+      "$oid": "648afb8c1da45f940a42b418"
+    }
+  ]
+}]
