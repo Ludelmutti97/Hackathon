@@ -87,7 +87,7 @@ export default function Profile(props) {
                 </div>
                 <div className="space-y-3 mt-10 flex w-full flex-col items-center justify-center">
                     {userInfo?.myEvents && (
-                        <ProgressBar value={userInfo?.myEvents.length} />
+                        <ProgressBar value={userInfo?.myEvents.length % 10} />
                     )}
                 </div>
 
@@ -101,6 +101,7 @@ export default function Profile(props) {
                                 beachId={ele.locationId}
                                 schedule={ele.hours}
                                 date={ele.date}
+
                             />
                         ))}
                 </div>

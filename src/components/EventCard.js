@@ -3,28 +3,39 @@ import { useEffect, useState } from "react";
 import moment from "moment/moment";
 
 export default function GameCard({
-  eventId,
-  numPlayer,
-  schedule,
-  participants,
-  date,
-  hour,
-  signToEvent,
-  beachId,
-  unsubscribe,
+
+    eventId,
+    numPlayer,
+    schedule,
+    participants,
+    date,
+    signToEvent,
+    beachId,
+    unsubscribe,
+
+
 }) {
   const [beachInfo, setBeachInfo] = useState([]);
 
-  const findCorrectBeach = (id) => {
-    return beachInfo.find((ele) => ele._id == id);
-  };
 
-  const fetchData = async () => {
-    const beachRes = await fetch("/api/beaches");
-    const beachData = await beachRes.json();
+    const findCorrectBeach = (id) => {
+        return beachInfo.find((ele) => ele._id == id);
+    };
+    
+    
+        const fetchData = async () => {
+            const beachRes = await fetch("/api/beaches");
+            const beachData = await beachRes.json();
+            setBeachInfo(await beachData);
+        };
+    
+        
+    useEffect(() => {
+        (async () => {
+            await fetchData();
+        })();
+    }, []);
 
-    setBeachInfo(await beachData);
-  };
 
   useEffect(() => {
     (async () => {

@@ -25,6 +25,9 @@ module.exports = {
         
 
       },
+      backgroundImage: {
+        "login-bg" : "url('/images/img.png')"
+      },
       fontFamily: {
         "robotoThin": ["Roboto-Thin"],
         "robotoThinItalic": ["Roboto-ThinItalic"],

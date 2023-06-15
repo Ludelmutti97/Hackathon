@@ -19,14 +19,14 @@ export default function DetailedCard({
                 />
             </div>
 
-            <section className="text-contrastOffWhite font-robotoThin px-3 py-6">
-                <p>{description}</p>
+            <section className="text-contrastOffWhite font-robotoThin px-1 py-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla pellentesque scelerisque hendrerit. Etiam euismod ornare magna sed hendrerit. </p>
             </section>
 
             <div className="flex justify-center items-end py-4">
                 <button
                     onClick={postGame}
-                    className="bg-navBar rounded-3xl w-48 h-8 text-contrastOffWhite text-sm font-robotoRegular"
+                    className="bg-navBar rounded-3xl w-28 h-8 text-contrastOffWhite text-sm font-robotoRegular"
                 >
                   Marcar evento
                 </button>
