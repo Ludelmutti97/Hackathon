@@ -1,0 +1,78 @@
+[{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64a6"
+  },
+  "name": "Praia de Matosinhos",
+  "location": "Matosinhos",
+  "dificulty": "Fácil",
+  "address": "Av. Gen. Norton de Matos, 4450-208 Matosinhos",
+  "events": [],
+  "img": "/../public/images/matosinhos.png",
+  "description": "Vasta extensão de praia de areia com zonas para praticar surf, nadar e apanhar banhos de sol, além de vista para o pôr do sol.",
+  "lat": {
+    "$numberDecimal": "41.1767336"
+  },
+  "lng": {
+    "$numberDecimal": "-8.691700"
+  }
+},
+{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64a7"
+  },
+  "name": "Praia de Leça da Palmeira",
+  "location": "Leça da Palmeira",
+  "dificulty": "Fácil",
+  "address": "Leça da Palmeira",
+  "events": [],
+  "img": "/../public/images/leca.png",
+  "description": "Com um areal extenso, banhado pelo mar de ondulação forte, a Praia de Leça da Palmeira oferece excelentes condições para a prática de surf, bodyboard e kitesurf."
+},
+{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64a8"
+  },
+  "name": "Praia da Azurara",
+  "location": "Azurara",
+  "dificulty": "Fácil",
+  "address": "Praia da Azurara",
+  "events": [],
+  "img": "/../public/images/azurara.png",
+  "description": "Extensa praia rodeada de dunas com surf, redes para vólei de praia, futebol e bar informal."
+},
+{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64a9"
+  },
+  "name": "Praia de Canide",
+  "location": "Vila Nova de Gaia",
+  "dificulty": "Médio",
+  "address": "Praia de Canide Sul, Av. da Beira-Mar 3297, Vila Nova de Gaia",
+  "events": [],
+  "img": "/../public/images/canidelo.png",
+  "description": "Inserida num areal enorme que se estende por quilómetros sem interrupção, a Praia de Canide está dividida em duas áreas, Norte e Sul, sendo esta última a preferida dos surfistas, enquanto a zona norte costuma ser palco de competições de kiteboard e futebol de praia."
+},
+{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64aa"
+  },
+  "name": "Praia de Salgueiros",
+  "location": "Vila Nova de Gaia",
+  "dificulty": "Difícil",
+  "address": "Av. da Beira-Mar C2, 4400-572 Vila Nova de Gaia",
+  "events": [],
+  "img": "/../public/images/salgueiros.png",
+  "description": "Com areia branca fina pontuada por formações rochosas, a Praia de Salgueiros foi recentemente alvo de obras de beneficiação que a tornaram mais agradável. Banhada por uma ondulação forte, esta praia oferece boas condições para a prática de surf."
+},
+{
+  "_id": {
+    "$oid": "6489c455286e1e2a562b64ab"
+  },
+  "name": "Praia da Aguda",
+  "location": "Arcozelo",
+  "dificulty": "Difícil",
+  "address": "Praia da Aguda, Av. Padre Guilherme 25, Arcozelo",
+  "events": [],
+  "img": "/../public/images/aguda.png",
+  "description": "Com ondulação forte, esta praia é procurada pelos praticantes de surf e oferece também boas condições para a pesca submarina, pelos muitos espécimes que se abrigam nos seus fundos rochosos."
+}]
