@@ -10,23 +10,33 @@ export default function Profile(props) {
     const userId = "6479ec3f1de2044d9892aaba";
     const [userInfo, setUserInfo] = useState();
     const [events, setEvents] = useState()
+    const [myEvents, setMyEvents] = useState()
+
 
     const router = useRouter();
 
     const fetchData = async (uid) => {
-        const resUser = await fetch(`/api/users/${uid}`);
+        const resUser = await fetch(`api/users/${uid}`);
         const dataUser = await resUser.json();
         setUserInfo(dataUser);
 
-        // const resEvents = await fetch(`/api/surf/}`);
-        // const dataEvents = await res.json();
-        // const userEvents = await dataEvents.playersId.some((ele) => ele._id === uid )
-        // setEvents(userEvents)
+        const resEvents = await fetch(`api/surf`);
+        const dataEvents = await resEvents.json();
+        setEvents(dataEvents)
     };
+    
+    const getMyEvents = () => {
+      const eventInfo = events && events.filter((ele) => userInfo?.myEvents.includes(ele._id))
+      setMyEvents(eventInfo)
+    }
 
     useEffect(() => {
         fetchData(userId);
     }, []);
+
+    useEffect(() => {
+        getMyEvents();
+    }, [events]);
 
     return (
         <div className="flex flex-col items-center justify-center pt-3">
@@ -35,7 +45,7 @@ export default function Profile(props) {
                     <Image
                         width={150}
                         height={132}
-                        src={userInfo?.img}
+                        src={""}
                         className="rounded-full"
                     />
                 </div>
@@ -56,8 +66,8 @@ export default function Profile(props) {
                 </div>
 
                 <div className="pt-10">
-                    {userInfo?.myEvents &&
-                        userInfo?.myEvents.map((ele) => (
+                    {myEvents &&
+                        myEvents.map((ele) => (
                             <EventCard
                                 key={ele._id}
                                 eventId={ele._id}
