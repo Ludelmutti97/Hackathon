@@ -9,6 +9,7 @@ export default function GameCard({
     schedule,
     participants,
     date,
+    hour,
     signToEvent,
     beachId,
     unsubscribe,

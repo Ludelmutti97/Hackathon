@@ -1,5 +1,6 @@
 import React from "react";
-
+import Image from "next/image";
+import prenda from "#/svg/prenda.svg";
 const ProgressBar = ({ value }) => {
     const levels = 10;
     const max = 10;
@@ -13,7 +14,9 @@ const ProgressBar = ({ value }) => {
         <>
 
             <div className="w-full h-2 flex items-center gap-2">
+
                 <div className="w-full rounded-full flex items-center h-2">
+
                     {[...Array(filledLevels)].map((_, index) => (
                         <div
                             className="filled-level z-10 bg-navBar h-2"
@@ -30,7 +33,15 @@ const ProgressBar = ({ value }) => {
                         ></div>
                     ))}
                 </div>
-                <span>R</span>
+            <div className="justify-center">
+            <Image
+              src={prenda}
+              width={20}
+              height={25}
+
+              alt="follow"
+            />
+          </div>
             </div>
         </>
     );
