@@ -10,23 +10,30 @@ const ProgressBar = ({ value }) => {
     const emptyLevelWidth = `${(100 / levels) * emptyLevels}%`;
 
     return (
-        <div className="w-full rounded-full flex items-center h-2">
-            {[...Array(filledLevels)].map((_, index) => (
-                <div
-                    className="filled-level z-10 bg-dark-blue h-2"
-                    style={{width: filledLevelWidth}}
-                    key={index}
-                ></div>
-            ))}
+        <>
+            <h3 className="font-robotoRegular">O Meu Progresso</h3>
+            <div className="w-full h-2 flex items-center gap-2">
+                <span>I</span>
+                <div className="w-full rounded-full flex items-center h-2">
+                    {[...Array(filledLevels)].map((_, index) => (
+                        <div
+                            className="filled-level z-10 bg-navBar h-2"
+                            style={{ width: filledLevelWidth }}
+                            key={index}
+                        ></div>
+                    ))}
 
-            {[...Array(emptyLevels)].map((_, index) => (
-                <div
-                    className="empty-level h-2"
-                    style={{ width: emptyLevelWidth }}
-                    key={index}
-                ></div>
-            ))}
-        </div>
+                    {[...Array(emptyLevels)].map((_, index) => (
+                        <div
+                            className="empty-level h-2 bg-branco"
+                            style={{ width: emptyLevelWidth }}
+                            key={index}
+                        ></div>
+                    ))}
+                </div>
+                <span>R</span>
+            </div>
+        </>
     );
 };
 

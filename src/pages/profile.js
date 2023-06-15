@@ -66,6 +66,7 @@ export default function Profile(props) {
                 </div>
 
                 <div className="pt-10">
+                    <h3>Próximos eventos</h3>
                     {myEvents &&
                         myEvents.map((ele) => (
                             <EventCard

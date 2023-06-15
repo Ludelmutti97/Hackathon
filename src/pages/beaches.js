@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 
 export default function Beaches() {
+
+   
+
     const [confirmation, setConfirmation] = useState(false);
     const [beachesAvailable, setBeachesAvailable] = useState();
     const [dataToSend, setDataToSend] = useState({
@@ -25,6 +28,25 @@ export default function Beaches() {
         return data;
     };
 
+    const fetchWeather = async () => {
+        console.log('oi')
+        const lat = 58.7984;
+        const lng = 17.8081;
+        const params = "waveHeight,airTemperature";
+
+        const res = await fetch(
+            `https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`,
+            {
+                headers: {
+                    Authorization:
+                        "467f8204-0b22-11ee-a26f-0242ac130002-467f8272-0b22-11ee-a26f-0242ac130002",
+                },
+            }
+        );
+        const data = await res.json();
+        console.log(await data);
+    };
+
     /*     GETS DATA FROM FIELDS */
 
     useEffect(() => {
@@ -35,7 +57,6 @@ export default function Beaches() {
     }, []);
 
     const postGame = async () => {
-
         const res = await fetch("api/surf/", {
             method: "POST",
             headers: {
@@ -44,7 +65,7 @@ export default function Beaches() {
             body: JSON.stringify(dataToSend),
         });
         const data = await res.json();
-        console.log(data)
+        console.log(data);
         const status = res.status;
         if (status === 201) {
             toast.success("Evento criado!", {
@@ -92,6 +113,8 @@ export default function Beaches() {
                     </li>
                 ))}
             </ul>
+
+            
             <ToastContainer
                 position="bottom-center"
                 autoClose={5000}
@@ -104,12 +127,7 @@ export default function Beaches() {
                 pauseOnHover
                 theme="dark"
             />
-            <Navbar page={"page"}/>
+            <Navbar page={"page"} />
         </div>
     );
 }
-
-
-
-const placeholder = <span><img src=""></img>LOGIN</span>
-

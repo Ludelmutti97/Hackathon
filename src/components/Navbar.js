@@ -19,7 +19,7 @@ export default function Navbar({ page }) {
   
   return (
     <nav className="fixed bottom-0 z-50 w-full">
-      <div className="flex justify-around py-4 w-full bg-dark-blue items-center">
+      <div className="flex justify-around py-4 w-full bg-navBar items-center">
         <Link href="/beaches">
           <div onClick={handleClick}>
             <Image

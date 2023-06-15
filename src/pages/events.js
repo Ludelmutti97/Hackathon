@@ -93,13 +93,13 @@ export default function Events(props) {
     };
 
     return (
-        <div className="bg-lightest-blue h-screen w-screen">
+        <div className="h-screen w-screen">
             <div className="flex justify-center p-8">
                 <div
                     className="bg-primaryDarkerBlue w-[310px] h-[42
-                    8px] rounded-full flex justify-center items-center font-robotoRegular text-contrastOffWhite py-2"
+                    8px] rounded-full flex justify-center items-center font-robotoRegular  py-2"
                 >
-                    <motion.div className="flex  bg-dark-blue rounded-full p-2 w-[290px] justify-center">
+                    <motion.div className="flex  bg-card-color rounded-full p-2 w-[290px] justify-center">
                         {buttons.map((el, i) => (
                             <MenuItem
                                 text={el.label}
@@ -155,12 +155,13 @@ export default function Events(props) {
 
 const MenuItem = ({ text, selected, onClick }) => (
     <motion.div
-        className="rounded-full w-[108px] h-[40px] flex justify-center items-center"
+        className="rounded-full w-[108px] h-[40px] flex justify-center text-card-color items-center"
         layout
         onClick={onClick}
         animate={{
             opacity: selected ? 1 : 0.3,
-            backgroundColor: selected ? "#ff0000" : "transparent",
+            backgroundColor: selected ? "#D56A43" : "transparent",
+            color: selected ? "rgba(232, 243, 214, 0.8)" : "#D56A43"
         }}
     >
         {text}
