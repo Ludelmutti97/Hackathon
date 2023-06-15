@@ -148,7 +148,7 @@ export default function Events(props) {
                     theme="dark"
                 />
             </div>
-            <Navbar page={"games"} />
+            <Navbar page={"events"} />
         </div>
     );
 }

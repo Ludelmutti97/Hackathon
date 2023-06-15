@@ -8,12 +8,12 @@ export default async function handler(req, res) {
     if (req.method === "GET") {
 
       const date = req.query.date
+      console.log('oi')
       if (date) {
         const beach = await getEventByDate(date);
         return res.status(200).json(beach)
       }
-
-      const event= await getAllEvents()
+      const event = await getAllEvents()
       return res.status(200).json(event)
     }
 
@@ -34,7 +34,6 @@ export default async function handler(req, res) {
 
     if (req.method === "POST") {
 
-      
       const { id } = req.query;
       const event = await getAddArray(id, user._id);
       if (event) {
