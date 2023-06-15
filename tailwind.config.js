@@ -26,7 +26,8 @@ module.exports = {
 
       },
       backgroundImage: {
-        "login-bg" : "url('/images/img.png')"
+        "login-bg" : "url('/images/img.png')",
+        "reward-bg" : "url('/images/RECOMPENSAS.png')"
       },
       fontFamily: {
         "robotoThin": ["Roboto-Thin"],

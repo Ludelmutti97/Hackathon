@@ -66,7 +66,7 @@ export default function Profile(props) {
 
     return (
         <div className="flex flex-col items-center justify-center pt-3">
-            <div className="flex flex-col w-[60%] items-center text-contrastOffWhite pt-8 mb-24  ">
+            <div className="flex flex-col w-[60%] items-center pt-8 mb-24  ">
                 <div className=" rounded-full w-[144px] h-[144px] border-b border-r border-primaryBlue flex intems-center justify-center  text-center ">
                     <Image
                         width={150}
@@ -85,15 +85,18 @@ export default function Profile(props) {
                         {userInfo?.nationality}
                     </span>
                 </div>
+
+
                 <div className="space-y-3 mt-10 flex w-full flex-col items-center justify-center">
+               
                     {userInfo?.myEvents && (
                         <ProgressBar value={userInfo?.myEvents.length % 10} />
                     )}
                 </div>
 
                 <div className="pt-10">
-                    <h3>Próximos eventos</h3>
-                    {myEvents &&
+                    <h3 className="font-robotoBold px-2 mb-2">Próximos eventos</h3>
+                    {myEvents ?
                         myEvents.map((ele) => (
                             <EventCard
                                 key={ele._id}
@@ -103,7 +106,8 @@ export default function Profile(props) {
                                 date={ele.date}
 
                             />
-                        ))}
+                        )) : <p>Não estás inscrito em nenhum evento!</p>
+                        }
                 </div>
             </div>
 
