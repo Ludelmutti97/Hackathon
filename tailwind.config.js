@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       colors: {
         "backgroundColor": "#E7C3AC",
-        "secondBackgroundColor": "#E8F3D6",
+        "card-color": 'rgba(232, 243, 214, 0.8)',
         "branco": "#F4F4F9",
         "logginButton": "#FAAB78",
         "titulo": "#FAAB78",
@@ -22,9 +22,7 @@ module.exports = {
         "boxes": "#E8F3D6",
         "laranjaSelect": "#E8B873",
         "laranjaBarra": "#E3CDB1"
-
-
-
+        
 
       },
       fontFamily: {
@@ -37,4 +35,5 @@ module.exports = {
 
     },
     plugins: [],
-};
+}
+}

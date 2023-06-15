@@ -26,9 +26,9 @@ export default function DetailedCard({
             <div className="flex justify-center items-end py-4">
                 <button
                     onClick={postGame}
-                    className="bg-dark-blue rounded-3xl w-48 h-8 text-contrastOffWhite  font-robotoRegular"
+                    className="bg-navBar rounded-3xl w-48 h-8 text-contrastOffWhite text-sm font-robotoRegular"
                 >
-                    Marcar evento
+                  Marcar evento
                 </button>
             </div>
         </>

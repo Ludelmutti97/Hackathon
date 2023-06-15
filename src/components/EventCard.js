@@ -31,7 +31,7 @@ export default function GameCard({
     }, []);
 
     return (
-        <div className="text-dark-blue flex items-center justify-around rounded-[10px] w-[347px] h-[99px]  bg-primary-orange mb-4">
+        <div className="text-dark-blue flex items-center justify-around rounded-[10px] w-[347px] h-[99px]  bg-card-color mb-4">
             {findCorrectBeach(beachId) && (
                 <div className="flex flex-col justify-center h-[100px] w-[100px]">
                     <Image
@@ -76,13 +76,13 @@ export default function GameCard({
                                     )
                                 }
                             >
-                                <span className="text-center text-xs p-1 font-robotoRegular">
+                                <span className="text-center rounded text-branco bg-navBar text-xs2 font-robotoRegular">
                                     Juntar-se
                                 </span>
                             </div>
                         ) : (
                             <div
-                                className={`flex flex-col w-[60px] bg-secondaryRed rounded justify-center text-sm`}
+                                className={`flex flex-col w-[60px] bg-vermelho rounded justify-center text-sm`}
                                 onClick={() =>
                                     unsubscribe(
                                         "6479ec3f1de2044d9892aaba",
@@ -90,7 +90,7 @@ export default function GameCard({
                                     )
                                 }
                             >
-                                <span className="text-center text-xs p-1 font-robotoRegular">
+                                <span className="text-center bg-vermelho text-branco rounded text-xs p-1 font-robotoRegular">
                                     Sair
                                 </span>
                             </div>
@@ -99,7 +99,7 @@ export default function GameCard({
                             {participants?.some(
                                 (el) => el !== "6479ec3f1de2044d9892asaba"
                             ) && (
-                                <div className="bg-green-500  w-[60px] font-riftItalic text-center text-xs ">
+                                <div className="bg-verde rounded  w-[60px] text-slate-50 font-robotoThinItalic text-center text-sm ">
                                     <span>Inscrito</span>
                                 </div>
                             )}

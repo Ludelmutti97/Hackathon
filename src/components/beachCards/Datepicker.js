@@ -21,7 +21,7 @@ export default function Datepicker({ updateDate }) {
                         },
                         "& .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline":
                             {
-                                borderColor: "#0C8CE9",
+                                borderColor: "#D03030",
                             },
                     }}
                 />
