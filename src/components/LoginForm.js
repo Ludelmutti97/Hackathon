@@ -38,14 +38,14 @@ export default function LoginForm(props) {
                 type="text"
                 onChange={(e) => handleChange(e.target.value, "name")}
                 placeholder="Nome"
-                className="bg-transparent placeholder-contrastOffWhite w-64 border-b p-3 border-contrastOffWhite"
+                className="bg-transparent placeholder-branco w-64 border-b p-3 border-contrastOffWhite"
             ></input>
             <input
                 value={state.password}
                 onChange={(e) => handleChange(e.target.value, "password")}
                 type="password"
                 placeholder="Senha"
-                className="bg-transparent placeholder-contrastOffWhite w-64 border-b border-contrastOffWhite p-3"
+                className="bg-transparent placeholder-branco w-64 border-b border-contrastOffWhite p-3"
             ></input>
             </div>
         </form>

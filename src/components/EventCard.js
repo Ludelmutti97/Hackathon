@@ -11,6 +11,7 @@ export default function GameCard({
     signToEvent,
     beachId,
     unsubscribe,
+    hour
 
 }) {
     const [beachInfo, setBeachInfo] = useState([]);
