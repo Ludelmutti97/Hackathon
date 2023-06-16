@@ -15,6 +15,7 @@ export default function GameCard({
     unsubscribe,
 
 
+
 }) {
   const [beachInfo, setBeachInfo] = useState([]);
 

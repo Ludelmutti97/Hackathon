@@ -12,10 +12,18 @@ const ProgressBar = ({ value }) => {
 
     return (
         <>
+<<<<<<< HEAD
             <h3 className="font-robotoRegular">O Meu Progresso</h3>
             <div className="w-full h-2 flex items-center gap-2 ">
                 
                 <div className="w-full rounded-full flex items-center h-2 ">
+=======
+
+            <div className="w-full h-2 flex items-center gap-2">
+
+                <div className="w-full rounded-full flex items-center h-2">
+
+>>>>>>> 057a63084f9c2e4c3677dd51aea98bdd05c01bd5
                     {[...Array(filledLevels)].map((_, index) => (
                         <div
                             className="filled-level z-10 bg-navBar h-2"

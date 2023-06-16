@@ -12,7 +12,7 @@ module.exports = {
         "backgroundColor": "#E7C3AC",
         "card-color": 'rgba(232, 243, 214, 0.8)',
         "branco": "#F4F4F9",
-        "logginButton": "#FAAB78",
+        "loginButton": "#FAAB78",
         "titulo": "#FAAB78",
         "verde": "#489750",
         "amarelo": "#FFDD55",
@@ -26,7 +26,8 @@ module.exports = {
 
       },
       backgroundImage: {
-        "login-bg" : "url('/images/img.png')"
+        "login-bg" : "url('/images/img.png')",
+        "reward-bg" : "url('/images/RECOMPENSAS.png')"
       },
       fontFamily: {
         "robotoThin": ["Roboto-Thin"],

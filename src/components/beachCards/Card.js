@@ -19,10 +19,11 @@ export default function Card({
 
 
     const tagColor = {
-        Fácil: "verde",
-        Médio: "amarelo",
-        Difícil: "vermelho",
+        Fácil: "#489750",
+        Médio: "#F6AB3f",
+        Difícil: "#D03030",
     };
+
     console.log(tagColor[dificulty]);
     const [open, setOpen] = useState(false);
     const hostId = "6479ec3f1de2044d9892aaba";
@@ -52,8 +53,9 @@ export default function Card({
                     />
 
                     <div
-                        className={`absolute w-[70px] h-[20px] bg-${tagColor[dificulty]} bottom-0 left-3 rounded-md`}
-                    >
+                        className={`absolute w-[70px] h-[20px] bottom-0 left-3 rounded-md`}
+                        style={{backgroundColor: tagColor[dificulty]}}
+                   >
                         <p className="text-center text-sm text-branco font-robotoRegular">
                             {dificulty}
                         </p>
